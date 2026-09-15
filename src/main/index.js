@@ -1,3 +1,4 @@
+
 import {
   app, BrowserWindow, dialog, Menu, ipcMain,
   powerSaveBlocker, screen, session, shell,
@@ -938,14 +939,14 @@ function runApp() {
     // Syncing new window background to theme choice.
     const windowBackground = await baseHandlers.settings._findOne('baseTheme').then((setting) => {
       if (!setting) {
-        return nativeTheme.shouldUseDarkColors ? '#212121' : '#f1f1f1'
+        return nativeTheme.shouldUseDarkColors ? '#000000' : '#f1f1f1'
       }
 
       // Determine window color to be shown (shown most prominently during initial app load)
       // Uses the --bg-color for each corresponding theme
       switch (setting.value) {
         case 'dark':
-          return '#212121'
+          return '#000000'
         case 'light':
           return '#f1f1f1'
         case 'black':
@@ -986,12 +987,12 @@ function runApp() {
           return '#eff1f5'
         case 'system':
         default:
-          return nativeTheme.shouldUseDarkColors ? '#212121' : '#f1f1f1'
+          return nativeTheme.shouldUseDarkColors ? '#000000' : '#f1f1f1'
       }
     }).catch((error) => {
       console.error(error)
       // Default to nativeTheme settings if nothing is found.
-      return nativeTheme.shouldUseDarkColors ? '#212121' : '#f1f1f1'
+      return nativeTheme.shouldUseDarkColors ? '#000000' : '#f1f1f1'
     })
 
     let savedBounds, savedMaximized, savedFullScreen
