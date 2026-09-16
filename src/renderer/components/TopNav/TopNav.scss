@@ -216,3 +216,26 @@
     }
   }
 }
+
+.pokeballBadgeBtn {
+  margin-inline-start: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+
+  &:hover .pokeballNavIcon {
+    transform: rotate(360deg) scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.7));
+  }
+}
+
+.pokeballNavIcon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+

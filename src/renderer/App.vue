@@ -265,12 +265,19 @@ async function checkForNewUpdates() {
 
   try {
     const response = await fetch('https://api.github.com/repos/Web-Dev-With-Dev/Snorlex/releases?per_page=1')
+    if (!response.ok) {
+      return
+    }
     const json = await response.json()
+
+    if (!Array.isArray(json) || json.length === 0 || !json[0]?.tag_name) {
+      return
+    }
 
     const tagName = json[0].tag_name
     const versionNumber = tagName.replace('v', '').replace('-beta', '')
 
-    let changelog = json[0].body
+    let changelog = (json[0].body || '')
       // Link usernames to their GitHub profiles
       .replaceAll(/@(\S+)\b/g, '[@$1](https://github.com/$1)')
       // Shorten pull request links to #1234
@@ -280,7 +287,7 @@ async function checkForNewUpdates() {
     changelog = `${changelog}`
 
     updateChangelog.value = marked.parse(changelog)
-    changeLogTitle.value = json[0].name
+    changeLogTitle.value = json[0].name || tagName
     latestVersionNumber.value = versionNumber
 
     const appVersion = packageDetails.version.split('.')

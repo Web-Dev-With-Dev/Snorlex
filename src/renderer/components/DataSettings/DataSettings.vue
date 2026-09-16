@@ -19,13 +19,6 @@
         @click="showExportSubscriptionsPrompt = true"
       />
     </FtFlexBox>
-    <FtFlexBox>
-      <p>
-        <a href="https://docs.snorlexapp.io/usage/importing-subscriptions/">
-          {{ $t("Settings.Data Settings.How do I import my subscriptions?") }}
-        </a>
-      </p>
-    </FtFlexBox>
     <h4 class="groupTitle">
       {{ $t('History.History') }}
     </h4>

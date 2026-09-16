@@ -139,6 +139,32 @@
         </p>
       </router-link>
       <hr>
+
+      <!-- Snorlex Genre Quick Actions -->
+      <div class="genreSection">
+        <p v-if="isOpen" class="sectionTitle">GENRES</p>
+        <router-link
+          v-for="genre in genres"
+          :key="genre.name"
+          class="navOption genreOption"
+          role="button"
+          :to="`/search/${encodeURIComponent(genre.query)}`"
+          :title="genre.name"
+        >
+          <div class="thumbnailContainer">
+            <FontAwesomeIcon
+              :icon="genre.icon"
+              class="navIcon"
+              :class="applyNavIconExpand"
+            />
+          </div>
+          <p class="navLabel">
+            {{ genre.name }}
+          </p>
+        </router-link>
+      </div>
+      <hr>
+
       <router-link
         class="navOption mobileShow smallMobileOnlyHidden"
         role="button"
@@ -223,6 +249,15 @@
           </p>
         </component>
       </div>
+
+      <!-- Sleeping Snorlax Sidebar Footer Mascot (at very bottom) -->
+      <div class="sideNavMascotFooter mobileHidden">
+        <img
+          :src="snorlexSleepImg"
+          alt="Sleeping Snorlex"
+          class="sideNavMascotImg"
+        />
+      </div>
     </div>
   </FtFlexBox>
 </template>
@@ -234,8 +269,18 @@ import { useI18n } from 'vue-i18n'
 
 import FtFlexBox from '../ft-flex-box/ft-flex-box.vue'
 import SideNavMoreOptions from '../SideNavMoreOptions/SideNavMoreOptions.vue'
+import snorlexSleepImg from '../../assets/img/snorlexSleepTransparent.png'
 
 import store from '../../store/index'
+
+const genres = [
+  { name: 'Anime', query: 'Anime', icon: ['fas', 'tv'] },
+  { name: 'Movies', query: 'Movies', icon: ['fas', 'film'] },
+  { name: 'Series', query: 'Series', icon: ['fas', 'layer-group'] },
+  { name: 'Gaming', query: 'Gaming', icon: ['fas', 'gamepad'] },
+  { name: 'Documentaries', query: 'Documentaries', icon: ['fas', 'book-open'] },
+  { name: 'Music', query: 'Music', icon: ['fas', 'music'] }
+]
 
 import { youtubeImageUrlToInvidious } from '../../helpers/api/invidious'
 import { deepCopy, localizeAndAddKeyboardShortcutToActionTitle } from '../../helpers/utils'

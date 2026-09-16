@@ -1,7 +1,8 @@
 <template>
   <div>
-    <FtLoader
+    <FtVideoSkeleton
       v-if="isLoading"
+      :count="8"
     />
     <template
       v-else
@@ -81,6 +82,7 @@ import FtChannelBubble from '../FtChannelBubble/FtChannelBubble.vue'
 import FtElementList from '../FtElementList/FtElementList.vue'
 import FtFlexBox from '../ft-flex-box/ft-flex-box.vue'
 import FtLoader from '../FtLoader/FtLoader.vue'
+import FtVideoSkeleton from '../FtVideoSkeleton/FtVideoSkeleton.vue'
 import FtRefreshWidget from '../FtRefreshWidget/FtRefreshWidget.vue'
 
 import store from '../../store/index'

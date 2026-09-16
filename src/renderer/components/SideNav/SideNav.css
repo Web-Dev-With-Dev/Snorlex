@@ -287,3 +287,49 @@
   }
 }
 
+.genreSection {
+  margin-block: 4px;
+}
+
+.sectionTitle {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #71717a;
+  padding-inline: 16px;
+  margin-block: 8px 4px;
+  text-transform: uppercase;
+}
+
+.genreOption:hover {
+  background-color: var(--side-nav-hover-color);
+  color: var(--primary-color, #ef4444);
+}
+
+.sideNavMascotFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 6px 20px;
+  margin-block-start: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sideNavMascotImg {
+  width: calc(100% - 12px);
+  max-width: 185px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.sideNavMascotFooter:hover .sideNavMascotImg {
+  transform: scale(1.08) translateY(-3px);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.3));
+}
+
+

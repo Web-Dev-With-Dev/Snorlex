@@ -119,6 +119,17 @@
             :icon="['fas', 'filter']"
           />
         </button>
+        <button
+          class="pokeballBadgeBtn navButton"
+          title="Snorlex Featured"
+          @click="openInternalPath('/trending')"
+        >
+          <img
+            src="../../assets/img/pokeball.svg"
+            alt="Pokéball"
+            class="pokeballNavIcon"
+          />
+        </button>
       </div>
     </div>
     <FtProfileSelector class="side profiles" />

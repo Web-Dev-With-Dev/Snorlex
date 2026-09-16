@@ -244,7 +244,7 @@ const state = {
   proxyPassword: '',
   proxyProtocol: 'socks5',
   proxyVideos: !process.env.SUPPORTS_LOCAL_API,
-  region: 'US',
+  region: 'IN',
   rememberHistory: true,
   rememberSearchHistory: true,
   // 'auto', 'semi-auto', 'never'
