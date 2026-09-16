@@ -2,7 +2,7 @@
   display: block;
   block-size: calc(100vh - 60px);
   inline-size: 80px;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   position: sticky;
   inset-inline-start: 0;
   inset-block-start: 60px;
@@ -13,12 +13,16 @@
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .inner {
   block-size: 100%;
-  inline-size: 80px;
-  overflow: hidden auto;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .topNavOption {
@@ -310,26 +314,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 6px 20px;
-  margin-block-start: 16px;
-  width: 100%;
+  padding: 10px 10px 20px;
+  margin-block-start: 12px;
+  inline-size: 100%;
+  max-inline-size: 100%;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .sideNavMascotImg {
-  width: calc(100% - 12px);
-  max-width: 185px;
-  height: auto;
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  block-size: auto;
   object-fit: contain;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6));
+  transition: transform 0.25s ease, filter 0.25s ease;
   user-select: none;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .sideNavMascotFooter:hover .sideNavMascotImg {
-  transform: scale(1.08) translateY(-3px);
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.3));
+  transform: scale(1.03);
+  filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
 }
 
 
