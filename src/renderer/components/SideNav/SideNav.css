@@ -14,6 +14,14 @@
   transition-timing-function: ease-in-out;
   user-select: none;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sideNav::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .inner {
@@ -23,6 +31,14 @@
   overflow-x: hidden !important;
   overflow-y: auto;
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.inner::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 .topNavOption {
@@ -161,17 +177,13 @@
 }
 
 @media only screen and (width > 680px) {
-  ::-webkit-scrollbar {
-    inline-size: 10px;
-    block-size: 10px;
-  }
-
   .opened {
-    inline-size: 200px;
+    inline-size: 220px;
   }
 
   .opened .inner {
-    inline-size: 200px;
+    inline-size: 100%;
+    max-inline-size: 220px;
   }
 
   .opened .refreshIcon {
