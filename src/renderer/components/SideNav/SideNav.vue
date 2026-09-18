@@ -250,8 +250,8 @@
         </component>
       </div>
 
-      <!-- Sleeping Snorlax Sidebar Footer Mascot (at very bottom) -->
-      <div class="sideNavMascotFooter mobileHidden">
+      <!-- Sleeping Snorlax Sidebar Footer Mascot (only when sidebar is expanded/open) -->
+      <div v-if="isOpen" class="sideNavMascotFooter mobileHidden">
         <img
           :src="snorlexSleepImg"
           alt="Sleeping Snorlex"

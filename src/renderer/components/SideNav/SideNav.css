@@ -322,6 +322,10 @@
   color: var(--primary-color, #ef4444);
 }
 
+.sideNav:not(.opened) .sideNavMascotFooter {
+  display: none !important;
+}
+
 .sideNavMascotFooter {
   display: flex;
   align-items: center;
