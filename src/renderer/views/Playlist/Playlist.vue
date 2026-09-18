@@ -436,12 +436,12 @@ function updateUserPlaylistSortOrder(value) {
 /** @type {import('vue').ComputedRef<number>} */
 const totalPlaylistDuration = computed(() => {
   return shownPlaylistItems.value.reduce((acc, video) => {
-    return typeof video.lengthSeconds === 'number' ? acc + video.lengthSeconds : acc
+    return (video && typeof video.lengthSeconds === 'number') ? acc + video.lengthSeconds : acc
   }, 0)
 })
 
 const isDurationApproximate = computed(() => {
-  return shownPlaylistItems.value.some((video) => typeof video.lengthSeconds !== 'number')
+  return shownPlaylistItems.value.some((video) => !video || typeof video.lengthSeconds !== 'number')
 })
 
 const noPlaylistItemsPendingDeletion = computed(() => toBeDeletedPlaylistItemIds.value.length === 0)
@@ -519,11 +519,11 @@ async function getPlaylistLocal() {
       }
     }
 
-    const playlistItems_ = result.items.map(parseLocalPlaylistVideo)
+    const playlistItems_ = result.items.map(parseLocalPlaylistVideo).filter(Boolean)
 
     playlistTitle.value = result.info.title
     playlistDescription.value = result.info.description ?? ''
-    firstVideoId.value = playlistItems_[0].videoId
+    firstVideoId.value = playlistItems_[0]?.videoId ?? ''
     playlistThumbnail.value = result.info.thumbnails[0].url
     viewCount.value = result.info.views.toLowerCase() === 'no views' ? 0 : extractNumberFromString(result.info.views)
     videoCount.value = extractNumberFromString(result.info.total_items)
@@ -686,9 +686,10 @@ function getPlaylistItemsWithDuration() {
   let anyVideoMissingDuration = false
 
   modifiedPlaylistItems.forEach(video => {
+    if (!video) { return }
     if (videoDurationPresent(video)) { return }
 
-    const videoHistory = historyCacheById[video.videoId]
+    const videoHistory = historyCacheById.value ? historyCacheById.value[video.videoId] : undefined
 
     if (typeof videoHistory !== 'undefined') {
       const fetchedLengthSeconds = videoDurationWithFallback(videoHistory)
@@ -744,7 +745,7 @@ async function getNextPageLocal() {
   let shouldGetNextPage = false
 
   if (result) {
-    const parsedVideos = result.items.map(parseLocalPlaylistVideo)
+    const parsedVideos = result.items.map(parseLocalPlaylistVideo).filter(Boolean)
     playlistItems.value = playlistItems.value.concat(parsedVideos)
 
     if (result.has_continuation) {

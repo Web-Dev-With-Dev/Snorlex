@@ -654,10 +654,10 @@ async function loadCachedPlaylistInformation(cachedPlaylist) {
     }
   } else if (cachedPlaylist.continuationData !== null) {
     const continuationData = await getLocalCachedFeedContinuation('playlist', cachedPlaylist.continuationData)
-    videos.push(...continuationData.items.map(parseLocalPlaylistVideo))
+    videos.push(...continuationData.items.map(parseLocalPlaylistVideo).filter(Boolean))
 
     await untilEndOfLocalPlayList(continuationData, (p) => {
-      videos.push(...p.items.map(parseLocalPlaylistVideo))
+      videos.push(...p.items.map(parseLocalPlaylistVideo).filter(Boolean))
     }, { runCallbackOnceFirst: false })
   }
   playlistItems.value = videos
@@ -689,7 +689,7 @@ async function getPlaylistInformationLocal() {
 
     const videos = []
     await untilEndOfLocalPlayList(playlist, (p) => {
-      videos.push(...p.items.map(parseLocalPlaylistVideo))
+      videos.push(...p.items.map(parseLocalPlaylistVideo).filter(Boolean))
     })
 
     playlistItems.value = videos

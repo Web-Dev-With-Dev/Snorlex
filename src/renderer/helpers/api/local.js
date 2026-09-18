@@ -1525,6 +1525,9 @@ export function parseChannelHomeTab(homeTab, channelId, channelName) {
  * @param {import('youtubei.js').YTNodes.PlaylistVideo|import('youtubei.js').YTNodes.ReelItem|import('youtubei.js').YTNodes.ShortsLockupView} video
  */
 export function parseLocalPlaylistVideo(video) {
+  if (!video) {
+    return null
+  }
   if (video.type === 'ReelItem') {
     /** @type {import('youtubei.js').YTNodes.ReelItem} */
     const short = video
@@ -1635,6 +1638,9 @@ export function parseLocalPlaylistVideo(video) {
  * @param {string} [channelName]
  */
 export function parseLocalListVideo(item, channelId, channelName) {
+  if (!item) {
+    return null
+  }
   if (item.type === 'Movie') {
     /** @type {import('youtubei.js').YTNodes.Movie} */
     const movie = item

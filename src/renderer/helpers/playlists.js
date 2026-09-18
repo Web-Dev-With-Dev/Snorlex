@@ -38,24 +38,28 @@ export function getSortedPlaylistItems(playlistItems, sortOrder, locale, reverse
 }
 
 export function videoDurationPresent(video) {
-  if (typeof video.lengthSeconds !== 'number') { return false }
+  if (!video || typeof video.lengthSeconds !== 'number') { return false }
 
   return !(isNaN(video.lengthSeconds) || video.lengthSeconds === 0)
 }
 
 export function videoDurationWithFallback(video) {
-  if (videoDurationPresent(video)) { return video.lengthSeconds }
+  if (video && videoDurationPresent(video)) { return video.lengthSeconds }
 
   // Fallback
   return 0
 }
 
 function publishedWithFallback(video) {
+  if (!video) { return 0 }
   const published = video.published
   return typeof published === 'number' && !isNaN(published) && published !== 0 ? published : 0
 }
 
 function compareTwoPlaylistItems(a, b, sortOrder, collator) {
+  if (!a && !b) { return 0 }
+  if (!a) { return 1 }
+  if (!b) { return -1 }
   switch (sortOrder) {
     case SORT_BY_VALUES.DateAddedNewest:
       return b.timeAdded - a.timeAdded
