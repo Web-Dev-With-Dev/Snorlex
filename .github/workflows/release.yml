@@ -28,7 +28,6 @@ jobs:
           - win-arm64
           - linux-x64
           - linux-arm64
-          - linux-armv7l
           - osx-x64
           - osx-arm64
         include:
@@ -39,8 +38,6 @@ jobs:
           - runtime: linux-x64
             os: ubuntu-latest
           - runtime: linux-arm64
-            os: ubuntu-latest
-          - runtime: linux-armv7l
             os: ubuntu-latest
           - runtime: osx-x64
             os: macos-13
@@ -83,11 +80,6 @@ jobs:
         if: contains(matrix.runtime, 'arm64')
         shell: bash
         run: pnpm run build:arm64
-
-      - name: Build ARM32 (ARMv7l)
-        if: startsWith(matrix.runtime, 'linux-armv7l')
-        shell: bash
-        run: pnpm run build:arm32
 
       - name: Upload Binaries to GitHub Release
         uses: softprops/action-gh-release@v2
