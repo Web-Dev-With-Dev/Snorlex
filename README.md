@@ -1,164 +1,115 @@
-<p align="center">
- <img alt="" src="/_icons/logoColor.svg" width=500 align="center">
-</p>
+# Snorlex
 
-Snorlex is an open source desktop YouTube player built with privacy in mind.
-Use YouTube without advertisements and prevent Google from tracking you with their cookies and JavaScript.
-Available for Windows (10 and later), Mac (macOS 12 and later) & Linux thanks to Electron.
+A private, ad-free desktop YouTube client built with Electron and Vue.js.
 
-<p align="center"><a href="https://github.com/SnorlexApp/Snorlex/releases">Download Snorlex</a></p>
-<p align="center">
-  <a href="https://github.com/SnorlexApp/Snorlex/actions/workflows/build.yml">
-    <img alt='Build status' src="https://github.com/SnorlexApp/Snorlex/actions/workflows/build.yml/badge.svg?branch=development" />
-  </a>
-</p>
+[![GitHub Release](https://img.shields.io/github/v/release/Web-Dev-With-Dev/Snorlex?style=flat&color=blue)](https://github.com/Web-Dev-With-Dev/Snorlex/releases)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-green.svg?style=flat)](https://www.gnu.org/licenses/agpl-3.0)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20|%20macOS%20|%20Linux-lightgrey?style=flat)](https://github.com/Web-Dev-With-Dev/Snorlex/releases)
 
-<hr>
-<p align="center"><a href="#screenshots">Screenshots</a> &bull; <a href="#how-does-it-work">How does it work?</a> &bull; <a href="#features">Features</a> &bull; <a href="#download-links">Download Links</a> &bull; <a href="#contributing">Contributing</a> &bull; <a href="#localization">Localization</a> &bull; <a href="#contact">Contact</a> &bull; <a href="#donate">Donate</a> &bull; <a href="#license">License</a></p>
-<p align="center"><a href="https://snorlexapp.io/">Website</a> &bull; <a href="https://docs.snorlexapp.io/">Documentation</a> &bull; <a href="https://docs.snorlexapp.io/faq/">FAQ</a> &bull; <a href="https://github.com/SnorlexApp/Snorlex/discussions">Discussions</a></p>
-<hr>
+---
 
-> [!NOTE] 
-> Snorlex is currently in Beta. While it should work well for most users, there are still bugs and missing features that need to be addressed.
->
-> If you have an idea or if you found a bug, please submit a [GitHub issue](https://github.com/SnorlexApp/Snorlex/issues/new/choose) so that we can track it.  Please [search the existing issues](https://github.com/SnorlexApp/Snorlex/issues?q=is%3Aissue+sort%3Arelevance-desc) before submitting to prevent duplicates!
+## About Snorlex
 
-## Screenshots
-| The main Snorlex window                                                                         |
-|--------------------------------------------------------------------------------------------------|
-| ![](https://raw.githubusercontent.com/SnorlexApp/SnorlexApp.io/master/src/images/Snorlex1.png)|
+Snorlex is an open-source desktop YouTube client designed for privacy and distraction-free viewing. It allows you to watch videos without advertisements and prevents tracking via cookies and JavaScript.
 
-| Watching a video                                                                                 |
-|--------------------------------------------------------------------------------------------------|
-| ![](https://raw.githubusercontent.com/SnorlexApp/SnorlexApp.io/master/src/images/Snorlex2.png)|
+All your subscriptions, playlists, and history are stored locally on your machine and are never transmitted to third-party servers.
 
-| Settings                                                                                         |
-|--------------------------------------------------------------------------------------------------|
-| ![](https://raw.githubusercontent.com/SnorlexApp/SnorlexApp.io/master/src/images/Snorlex3.png)|
-
-## How does it work?
-Snorlex uses a built in extractor to grab and serve data / videos. The [Invidious API](https://github.com/iv-org/invidious) can also optionally be used. Snorlex does not use any official APIs to obtain data. While YouTube can still see your video requests, it can no
-longer track you using cookies or JavaScript. Your subscriptions, playlists and history are stored locally on your computer and never sent out.
-
-> [!IMPORTANT]  
-> Using a VPN or Tor is highly recommended to hide your IP while using Snorlex.
+---
 
 ## Features
-* Watch videos without ads
-* Use YouTube without Google tracking you using cookies and JavaScript
-* Two extractor APIs to choose from (Built in or Invidious)
-* Subscribe to channels without an account
-* Connect to an externally setup proxy such as Tor
-* View and search your local subscriptions, playlists and history
-* Organize your subscriptions into "Profiles" to create a more focused feed
-* Export & import subscriptions
-* YouTube Trending
-* YouTube Chapters
-* Most popular videos page based on the set Invidious instance
-* SponsorBlock
-* DeArrow
-* Open videos from your browser directly into Snorlex (with extension)
-* Watch videos using an external player
-* Full Theme support
-* Make a screenshot of a video
-* Multiple windows
-* Mini Player (Picture-in-Picture)
-* Keyboard shortcuts
-* Option to show only family friendly content
-* Show/hide functionality or elements within the app using the distraction free settings
-* View channel posts
 
-### Browser Extensions
-The following extensions open YouTube links directly in Snorlex:
+- **Ad-Free Playback**: Stream videos without pre-roll, mid-roll, or banner advertisements.
+- **Privacy by Default**: No Google account required. No tracking cookies or telemetry.
+- **SponsorBlock & DeArrow**: Automatically skip sponsored video segments and clean up clickbait thumbnails and titles.
+- **Local Subscriptions & Profiles**: Organize channels into custom Profiles (e.g., Tech, Music, Education) with full import and export functionality.
+- **Themes & Customization**: Built-in themes including Dracula, Catppuccin, Nord, Gruvbox, Solarized, and Everforest.
+- **Picture-in-Picture & Mini Player**: Detachable mini player and multi-window support.
+- **Chapters & Timestamps**: Full interactive chapter navigation.
+- **Proxy & Tor Integration**: Support for routing network requests through Tor or custom HTTP/SOCKS proxies.
+- **Browser Extension Integration**: Open YouTube links directly in Snorlex via [LibRedirect](https://libredirect.manerakai.com/) and [RedirectTube](https://github.com/MStankiewiczOfficial/RedirectTube).
+- **Internationalization**: Multi-language support with localized interfaces.
 
-- [LibRedirect](https://libredirect.manerakai.com/)
-- [RedirectTube](https://github.com/MStankiewiczOfficial/RedirectTube)
+---
 
-LibRedirect automatically redirect YouTube links to Snorlex.
-> [!IMPORTANT]
-> To ensure proper functionality, select Snorlex as Frontend in the Services settings of the extension.
+## Downloads
 
-RedirectTube, doesn’t automatically open YouTube links in Snorlex (although this feature can be enabled in the settings). Instead, it adds buttons to the toolbar and context menu, which you can click to open videos in Snorlex manually.
+Official builds are available on the [GitHub Releases](https://github.com/Web-Dev-With-Dev/Snorlex/releases/latest) page.
 
-- Download LibRedirect from [Mozilla Add-ons](https://addons.mozilla.org/firefox/addon/libredirect/) (for Firefox based-browsers) or [developer's website](https://libredirect.manerakai.com/download_chromium.html) (for Chrome and Chromium-based browsers).
+| Platform | Architecture | Formats |
+| :--- | :--- | :--- |
+| **Windows** | x64, ARM64 | Installer (.exe), Portable (.exe), .zip, .7z |
+| **macOS** | Apple Silicon, Intel | DMG (.dmg), .zip, .7z |
+| **Linux** | x64, ARM64, ARMv7 | AppImage, .deb, .rpm, .pacman, .zip, .7z |
+| **Web** | Universal | Web Bundle (.zip) |
 
-- Download RedirectTube from [Mozilla Add-ons](https://addons.mozilla.org/firefox/addon/redirecttube/) (for Firefox based-browsers) or [Chrome Web Store](https://chromewebstore.google.com/detail/redirecttube/jpbaggklodpddjcadlebabhiopjkjfjh) (for Chrome and Chromium-based browsers).
+---
 
-> [!NOTE]
-> These extensions do not work on Linux portable builds!
->
-> If you have issues with the extension working with Snorlex, please create an issue in this repository instead of the extension repository.
+## Development
 
-## Download Links
-### Official Downloads
+### Prerequisites
 
-> [!CAUTION]
-> Snorlex is only supported on Windows 10 and later, macOS 12 and above, and various Linux distributions. Installing it on unsupported systems may result in unexpected issues.
+- Node.js (v20 or higher recommended)
+- pnpm (v9 or higher)
 
-* [GitHub Releases](https://github.com/SnorlexApp/Snorlex/releases)
+### Setup & Run Locally
 
-* [Snorlex Website](https://snorlexapp.io/#download)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Web-Dev-With-Dev/Snorlex.git
+   cd Snorlex
+   ```
 
-* Flatpak on Flathub: [Download](https://flathub.org/apps/details/io.snorlexapp.Snorlex) and [Source Code](https://github.com/flathub/io.snorlexapp.Snorlex)
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-#### Automated Builds (Nightly / Weekly)
-> [!WARNING]
-> Use these builds at your own risk. These are pre-release versions and are only intended for people that want to test changes early and are willing to accept that things could break from one build to another. 
+3. Start the Electron development app:
+   ```bash
+   pnpm run dev
+   ```
 
-Builds are automatically created from changes to our development branch via [GitHub Actions](https://github.com/SnorlexApp/Snorlex/actions?query=workflow%3ABuild).
+4. Start the Web client development server:
+   ```bash
+   pnpm run dev:web
+   ```
 
-The first build with a green check mark is the latest build.  
+### Building & Packaging
 
-> [!IMPORTANT]
-> You will need to have a GitHub account to download these builds.
+To package the application for production:
 
-### Projects maintained by individual Snorlex team members
-* Homebrew Snorlex (Apple Silicon only): [Install](https://github.com/PikachuEXE/homebrew-Snorlex)
+```bash
+# Standard build (x64)
+pnpm run build
 
-* SnorlexAndroid (Snorlex port for Android and PWA): [Download](https://github.com/MarmadileManteater/SnorlexAndroid/releases) and [Source Code](https://github.com/MarmadileManteater/SnorlexAndroid)
+# ARM64 build
+pnpm run build:arm64
 
-> [!IMPORTANT]
-> These projects are related to Snorlex and are maintained by individual members of the Snorlex team. While they are not part of the main Snorlex project, they may be useful to Snorlex users. There may be issues when using these projects compared to the official builds. Any issues specific to these builds should be reported to their respective maintainers. Make sure you always try an [official download](https://github.com/snorlexapp/snorlex/#official-downloads) before reporting your issue to us!
+# Web Version
+pnpm run pack:web
+```
+
+---
 
 ## Contributing
-Thank you very much to the [People and Projects](https://docs.snorlexapp.io/credits/) that make Snorlex possible!
 
-If you like to get your hands dirty and want to contribute, we would love to
-have your help.  Send a pull request and someone will review your code. 
+Contributions, issue reports, and suggestions are welcome.
 
-> [!IMPORTANT]
-> Please follow the [Contribution Guidelines](https://github.com/SnorlexApp/Snorlex/blob/development/CONTRIBUTING.md) before sending your pull request.
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -m 'feat: add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a Pull Request.
 
-## Localization
-We are actively looking for translations! Translations can be submitted directly via pull requests or discussed in our [Discussions](https://github.com/SnorlexApp/Snorlex/discussions) page.
+---
 
-For the Linux Flatpak, the desktop entry comment string can be translated at our [Flatpak repository](https://github.com/flathub/io.snorlexapp.Snorlex/blob/master/io.snorlexapp.Snorlex.desktop).
+## Author
 
-## Contact
-If you ever have any questions, feel free to ask it on our [Discussions](https://github.com/SnorlexApp/Snorlex/discussions) page.  Alternatively, you can join our [Matrix Room](https://matrix.to/#/#snorlex:matrix.org).  
+- **Dev Gondaliya** - [Web-Dev-With-Dev](https://github.com/Web-Dev-With-Dev)
+- Email: [gondaliyadev007@gmail.com](mailto:gondaliyadev007@gmail.com)
 
-> [!IMPORTANT]
-> Don't forget to check out the [rules](https://docs.snorlexapp.io/community/matrix/) before joining.
-
-## Donate
-If you enjoy using Snorlex, you're welcome to leave a donation using the following method.  
-
-* Bitcoin Address: `bc1qhtnxvn9lswh87f8sw4d4kzurcn9r773p7rrkey`
-
-While your donations are much appreciated, only donate if you really want to.  Donations are used for keeping the website up and running and eventual code signing costs. 
-
-> [!TIP]
-> If you are using the Invidious API then we recommend that you donate to the instance that you use. You can also donate to the [Invidious team](https://invidious.io/donate/) or the [Local API developer](https://github.com/sponsors/LuanRT).
-
-## Author & Credits
-* **Developer & Creator**: [Web-Dev-With-Dev](https://github.com/Web-Dev-With-Dev)
-* Snorlex is built upon and inspired by open-source privacy projects and contributors.
+---
 
 ## License
-[![GNU AGPLv3 Image](https://www.gnu.org/graphics/agplv3-155x51.png)](https://www.gnu.org/licenses/agpl-3.0.html)  
 
-Snorlex is Free Software: You can use, study share and improve it at your
-will. Specifically you can redistribute and/or modify it under the terms of the
-[GNU Affero General Public License](https://www.gnu.org/licenses/agpl-3.0.html) as
-published by the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.  
+This project is licensed under the [GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)](LICENSE).
