@@ -40,7 +40,7 @@ jobs:
           - runtime: linux-arm64
             os: ubuntu-latest
           - runtime: osx-x64
-            os: macos-13
+            os: macos-latest
           - runtime: osx-arm64
             os: macos-latest
 
