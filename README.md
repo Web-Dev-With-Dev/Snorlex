@@ -11,9 +11,6 @@ Available for Windows (10 and later), Mac (macOS 12 and later) & Linux thanks to
   <a href="https://github.com/SnorlexApp/Snorlex/actions/workflows/build.yml">
     <img alt='Build status' src="https://github.com/SnorlexApp/Snorlex/actions/workflows/build.yml/badge.svg?branch=development" />
   </a>
-  <a href="https://hosted.weblate.org/engage/free-tube/">
-    <img src="https://hosted.weblate.org/widgets/free-tube/-/svg-badge.svg" alt="Translation status" />
-  </a>
 </p>
 
 <hr>
@@ -133,11 +130,7 @@ have your help.  Send a pull request and someone will review your code.
 > Please follow the [Contribution Guidelines](https://github.com/SnorlexApp/Snorlex/blob/development/CONTRIBUTING.md) before sending your pull request.
 
 ## Localization
-<a href="https://hosted.weblate.org/engage/free-tube/">
-<img src="https://hosted.weblate.org/widgets/free-tube/-/287x66-grey.png" alt="Translation status" />
-</a>
-
-We are actively looking for translations!  We use [Weblate](https://hosted.weblate.org/engage/free-tube/) to make it easy for translators to get involved.  Click on the badge above to learn how to get involved.
+We are actively looking for translations! Translations can be submitted directly via pull requests or discussed in our [Discussions](https://github.com/SnorlexApp/Snorlex/discussions) page.
 
 For the Linux Flatpak, the desktop entry comment string can be translated at our [Flatpak repository](https://github.com/flathub/io.snorlexapp.Snorlex/blob/master/io.snorlexapp.Snorlex.desktop).
 

@@ -92,11 +92,6 @@ const chunks = computed(() => [
     ].join('<br>'),
   },
   {
-    icon: ['fas', 'globe'],
-    title: t('About.Website'),
-    content: '<a href="https://github.com/Web-Dev-With-Dev/Snorlex">https://github.com/Web-Dev-With-Dev/Snorlex</a>',
-  },
-  {
     icon: ['fab', 'bitcoin'],
     title: `${t('About.Donate')} - BTC`,
     content: `<a href="bitcoin:${ABOUT_BITCOIN_ADDRESS}">${ABOUT_BITCOIN_ADDRESS}</a>`
