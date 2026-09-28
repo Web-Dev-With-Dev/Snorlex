@@ -85,8 +85,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2(@babel/core@8.0.1)
       '@double-great/stylelint-a11y':
-        specifier: ^3.5.2
-        version: 3.5.2(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
+        specifier: ^3.5.4
+        version: 3.5.4(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))
       '@eslint/js':
         specifier: ^10.0.1
         version: 10.0.1(eslint@10.10.0(jiti@2.7.0)(supports-color@10.2.2))
@@ -784,8 +784,8 @@ packages:
     resolution: {integrity: sha512-Xc3VhU02wqZ1HvHRJUwL09HkZSTvidqY5Ya0NXBSYOxAp+Ln9dcJr9fySI+CkONzP3PekQo9WdzCv0PGER/mOA==}
     engines: {node: '>=14.17.0'}
 
-  '@double-great/stylelint-a11y@3.5.2':
-    resolution: {integrity: sha512-tzCK6ItlIiUJwGnATxO54ELtSaQwiMtghhIy6G5umOsp6wTPyMfTUKXt9g/TIGO2+APG1NM4V/V3aiG5W6R8Rw==}
+  '@double-great/stylelint-a11y@3.5.4':
+    resolution: {integrity: sha512-KkDMMW1HegHOrhW+cyFNo81yXfA8y0066r5BFjr5clxDQvlpWU7NkAxiECYbSigw5oIANu8xQ4JDf8bIq/UT2A==}
     engines: {node: '>=22.0.0'}
     peerDependencies:
       stylelint: '>=16.0.0'
@@ -4253,6 +4253,10 @@ packages:
     resolution: {integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==}
     engines: {node: ^10 || ^12 || >=14}
 
+  postcss@8.5.28:
+    resolution: {integrity: sha512-RRuzqDtt5Y9h3quz5hWhK+TPnsmVs6WwSU6LkJMeY4HstUEDuYTG8UJSdawMRzmzAtV+KEoG8N3Qg2qLy5vM/A==}
+    engines: {node: ^10 || ^12 || >=14}
+
   postject@1.0.0-alpha.6:
     resolution: {integrity: sha512-b9Eb8h2eVqNE8edvKdwqkrY6O7kAwmI8kcnBv1NScolYJbo59XUF0noFq+lxbC1yN20bmC0WBEbDC5H/7ASb0A==}
     engines: {node: '>=14.0.0'}
@@ -5929,9 +5933,9 @@ snapshots:
 
   '@discoveryjs/json-ext@1.1.0': {}
 
-  '@double-great/stylelint-a11y@3.5.2(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))':
+  '@double-great/stylelint-a11y@3.5.4(stylelint@17.14.1(supports-color@10.2.2)(typescript@6.0.3))':
     dependencies:
-      postcss: 8.5.26
+      postcss: 8.5.28
       stylelint: 17.14.1(supports-color@10.2.2)(typescript@6.0.3)
 
   '@electron-internal/extract-zip@1.0.5': {}
@@ -6655,7 +6659,7 @@ snapshots:
       '@csstools/css-parser-algorithms': 4.0.0(@csstools/css-tokenizer@4.0.0)
       '@csstools/css-tokenizer': 4.0.0
       '@csstools/media-query-list-parser': 5.0.0(@csstools/css-parser-algorithms@4.0.0(@csstools/css-tokenizer@4.0.0))(@csstools/css-tokenizer@4.0.0)
-      postcss: 8.5.26
+      postcss: 8.5.28
       postcss-selector-parser: 7.1.5
       postcss-value-parser: 4.2.0
       style-search: 0.1.0
@@ -6949,7 +6953,7 @@ snapshots:
       '@vue/shared': 3.5.42
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.26
+      postcss: 8.5.28
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.42':
@@ -9585,6 +9589,12 @@ snapshots:
   postcss-value-parser@4.2.0: {}
 
   postcss@8.5.26:
+    dependencies:
+      nanoid: 3.3.18
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  postcss@8.5.28:
     dependencies:
       nanoid: 3.3.18
       picocolors: 1.1.1
